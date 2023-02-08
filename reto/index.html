@@ -1,0 +1,549 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #48A143;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%2348A143' width='11' height='11'/%3E%3Crect fill='%234aa245' x='10' width='11' height='11'/%3E%3Crect fill='%234ca347' y='10' width='11' height='11'/%3E%3Crect fill='%234fa44a' x='20' width='11' height='11'/%3E%3Crect fill='%2351a54c' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%2353a64e' y='20' width='11' height='11'/%3E%3Crect fill='%2355a850' x='30' width='11' height='11'/%3E%3Crect fill='%2357a952' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%2359aa54' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%235bab56' y='30' width='11' height='11'/%3E%3Crect fill='%235dac58' x='40' width='11' height='11'/%3E%3Crect fill='%235fad5a' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%2361ae5d' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%2363af5f' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%2365b061' y='40' width='11' height='11'/%3E%3Crect fill='%2367b163' x='50' width='11' height='11'/%3E%3Crect fill='%2369b265' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%236bb367' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%236db469' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%236fb66b' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%2371b76d' y='50' width='11' height='11'/%3E%3Crect fill='%2373b86f' x='60' width='11' height='11'/%3E%3Crect fill='%2375b971' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%2377ba73' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%2379bb75' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%237bbc77' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%237dbd79' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%237fbe7c' x='70' width='11' height='11'/%3E%3Crect fill='%2381bf7e' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%2383c080' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%2384c182' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%2386c284' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%2388c486' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%238ac588' x='80' width='11' height='11'/%3E%3Crect fill='%238cc68a' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%238ec78c' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%2390c88e' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%2392c990' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%2394ca92' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%2396cb94' x='90' width='11' height='11'/%3E%3Crect fill='%2398cc96' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%239acd98' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%239cce9a' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%239ecf9c' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23a0d09e' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23a2d1a0' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23a3d2a2' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23a5d3a4' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23a7d4a7' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23a9d6a9' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23abd7ab' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23add8ad' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23afd9af' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23b1dab1' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23b3dbb3' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23b5dcb5' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23b7ddb7' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23b9deb9' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23bbdfbb' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23BDE0BD' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .logos{
+            width: 200px;
+        }
+        #ibex{
+            width: 400px;
+        }
+        #stock {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+#stock img {
+    width: 150px;
+    height: 100px;
+}
+
+#botones {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    margin: auto;
+     
+}
+
+#botones > #setup {
+    margin-right: 20px;
+}
+#form {
+        z-index: 3;
+        background-color: rgba(161, 161, 161, 0.096);
+        display: flex;
+    }
+
+    .login {   
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    }
+
+.form {
+  position: relative;
+  z-index: 1;
+  background-color: #082B0C;
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg %3E%3Cpolygon fill='%23676105' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%237e7620' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%23676105' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%237e7620' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23968C36' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%234f1c1e' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%23592526' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23632E2E' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%23592526' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%234f1c1e' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23632E2E' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%234f1c1e' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23632E2E' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%23592526' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23632E2E' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 10px;
+  max-width: 450px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow:  -11px 11px 22px #bebebe, 11px -11px 22px #ffffff;
+}
+
+.form input {
+  outline: 0;
+  background: #e0e0e0;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form input:focus {
+  background: #e0e0e0;
+}
+
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #e0e0e0;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:active {
+  background: #395591;
+}
+
+.blur {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+.cartas{
+    background-color: #EEDAD9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='237' height='237' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23c8b5b4' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#welcome{
+    color: white;
+    font-size: large;
+}
+#registrarse{
+    color: black;
+}
+
+    </style>
+</head>
+<body >
+    <div class="login" id="form" style="display: none;">
+        <div class="form" id="loginF">
+          <p id="welcome">Bienvenido, Inicia Sesion </p>
+          <p id="error"></p>
+          <form class="login-form" id="loguear" >
+            <label class="text-white">E-mail
+            <input type="text" placeholder="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></label>
+        <label class="text-white">Password<input type="password" placeholder="password" name="password" required /></label>
+            <input type="submit" value="login">
+            <p id="inicio"></p>
+        </form>  
+        <button id="registrarse" class="font-weight-bold">registrar</button>
+        </div>
+    
+        <div class="registrar"  id="formR" style="display: none;">
+            <div class="form">
+                <p class="text-white" style="font-size: large;">Registrate</p>
+                <p id="registrado"></p> 
+                <form id="registrar">
+                <label class="text-white">Name
+                    <input name="name" id="name" type="text" placeholder="nombre"></label>
+                <label class="text-white">E-mail<input name="email" id="email" type="email" placeholder="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></label>
+                <label class="text-white">Password<input name="password" id="password" type="password" placeholder="contraseña"></label>
+                    <input type="submit" value="registrar">
+                </form>
+            </div>
+        </div>
+      </div>
+    <div class="container text-center" id="titulo">
+        <div id="sesiones"></div>
+        <div class="row">
+            <div class="col">
+                <img src="images/Ibex.png" alt="Logo del Ibex 35" id="ibex">
+            </div>
+        </div>
+        <div class="row">
+          <div class="col" id="empresas">
+            <img src="images/BBVA.png" alt="Logo de BBVA" class="logos" id="BBVA">
+            <img src="images/Cellnex.png" alt="Logo de Cellnex" class="logos" id="Cellnex">
+            <img src="images/Ferrovial.png" alt="Logo de Ferrovial" class="logos" id="Ferrovial">
+            <img src="images/Iberdrola.png" alt="Logo de Iberdrola" class="logos" id="Iberdrola">
+            <img src="images/Inditex.png" alt="Logo de Inditex" class="logos" id="Inditex">
+            <img src="images/Naturgy.png" alt="Logo de Naturgy" class="logos" id="Naturgy">
+            <img src="images/Repsol.png" alt="Logo de Repsol" class="logos" id="Repsol">
+            <img src="images/Santander.png" alt="Logo de Santander" class="logos" id="Santander">
+            <img src="images/Telefonica.png" alt="Logo de Telefonica" class="logos" id="Telefonica">
+            <img src="images/Caixabank.png" alt="Logo de la Caixa" class="logos" id="Caixabank">
+          </div>
+        </div>
+        <div class="row border border-dark">
+          <div class="col" id="stock">
+          </div>
+        </div>
+        <div class="row" id="importes">
+        </div>
+        <div class="row" id="botones" style="display: none;">
+            <button class="btn btn-warning font-weight-bold" id="botonMostrar">Importe</button>
+            <button class="btn btn-danger font-weight-bold" id="setup">Setup</button>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div id="graficos" class="container">
+        <div class="row">
+          <div class="col">
+            <canvas id="myChart"></canvas>  
+          </div>
+        </div>
+      </div>
+</body>
+
+<script>
+    var timer;
+    //Iniciar sesion
+
+setInterval(function () {
+  if (!localStorage.getItem("token")) {
+// Si no hay un token de inicio de sesión mostrar el formulario de inicio de sesión
+  let divf = document.getElementById("form");
+    divf.style.display = "block"; 
+    document.querySelector("#registrarse").addEventListener("click", function(){
+      document.querySelector("#loginF").style.display = "none";
+      document.querySelector("#formR").style.display = "block";
+
+});
+let cont = document.getElementById("titulo");
+let cont2 = document.getElementById("container");
+    cont.classList.add("blur");
+    cont2.classList.add("blur");
+}
+}, 1000)
+
+if (localStorage.getItem("token")) {
+    // Detecta que hay un usuario logueado
+    console.log("Usuario logueado");
+    var bienvenido = document.getElementById("Bienvenido");
+    var user = localStorage.getItem("usuario");
+  
+    var ibex = document.getElementById("sesiones");
+    ibex.innerHTML = "<button class'btn btn-secondary font-weight-bold' id='logoutBtn'>Cerrar Sesion</button>" ;
+    //Cerrar sesión
+    var logout = document.getElementById("logoutBtn");
+    logout.addEventListener("click", function() {
+    // Elimina la información del usuario logueado del navegador
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario");
+    // Recargar pagina
+    location.reload();
+    })
+
+    document.getElementById("botones").style.display = "block";
+    comprobarLocalStorage();
+} else {
+    // No hay un usuario logueado
+    console.log("No hay un usuario logueado");
+}
+
+
+//Loguearse
+formulario = document.getElementById('loguear');
+formulario.addEventListener("submit", function(event) {
+event.preventDefault();
+
+var datal = new FormData(formulario);
+// Agrega los datos del usuario a un objeto
+var userData = {
+    email: datal.get("email"),
+    password: datal.get("password")
+};
+// Envia los datos del usuario al servidor
+fetch('http://10.10.17.119/api/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+})
+    .then(response => response.json())
+    .then(response => {
+        console.log(response)
+        responseGlobal = response;
+
+        var error = document.getElementById("error");
+        var inicio = document.getElementById("inicio");
+        localStorage.removeItem("usuario");
+        if (response.status === "success") {
+            console.log("Usuario encontrado, iniciando sesión...");
+            // Código para iniciar sesión del usuario
+            let token = response.authorisation.token;
+            let usuario = response.user.name;
+            let email = response.user.email
+            localStorage.setItem("token", token);
+            localStorage.setItem("usuario", usuario);
+            localStorage.setItem("email",email);
+            //alert(usuario);
+              error.innerHTML = "";
+              inicio.innerHTML = "Usuario encontrado, iniciando sesion...";
+              inicio.style.color = "green";
+              location.reload();
+        
+        } else {
+            console.log("Usuario no encontrado, verifica tus credenciales");
+              error.innerHTML = "Usuario o contraseña incorrectos revise los datos";
+              error.style.color = "red";
+            // Código para mostrar un error al usuario
+        } 
+    })  
+    .catch(err => console.error(err));
+});
+
+//Registrar un usuario
+formularioR = document.getElementById('registrar');
+    formularioR.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var data = new FormData(formularioR);
+        const options = {method: 'POST', body: data};
+    fetch('http://10.10.17.119/api/register', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+    var registrado = document.getElementById("registrado")
+      registrado.innerHTML = "Usuario registrado";
+      registrado.style.color = "green";
+    location.reload();
+
+});
+
+  /*  Documento  */
+    function comprobarLocalStorage() {
+        if (localStorage.getItem('Seleccionadas')!=null){
+                let empresas = JSON.parse(localStorage.getItem('Seleccionadas'));
+                valores();
+                $("#empresas").css("display", "none");
+                $("#botonMostrar").css("display", "none");
+                $("#stock").css("display", "none");
+                $("#graficos").css("display", "none");
+            }
+            return;
+    }
+
+    $(document).ready(function () {
+        var launchPad = $("#empresas").clone();
+        $("#setup").click(function () {
+            $("#stock").empty();
+            $("#empresas").empty();
+            $("#empresas").html(launchPad.html());
+            listenToDragable();
+            clearInterval(timer)
+            location.reload;
+        });
+        
+        
+
+        window.onload = function(){
+            if (localStorage.getItem('Seleccionadas')!=null){
+                let empresas = JSON.parse(localStorage.getItem('Seleccionadas'));
+                let empresas2 = [];
+                for (x = 0; x < empresas.length; x++) {
+                    empresas2.push(empresas[x].id);
+                }   if (hasDuplicates(empresas2)) {
+                        return;
+                }   else {
+                    return;
+                }
+            $("#empresas").css("display", "none");
+            $("#botonMostrar").css("display", "none");
+            $("#stock").css("display", "none");
+            return;
+            }
+        };
+
+
+     /*Drag & Drop */
+        listenToDragable();
+        function listenToDragable() {
+            $('.logos').draggable({
+                helper: 'clone'
+            });
+
+
+            $('#stock').droppable({ 
+                accept: '.logos',
+                hoverClass: 'hovering',
+                drop: function (ev, ui) {
+                    ui.draggable.detach();                    
+                    var empresaId = ui.draggable.attr("id");
+                    console.log(empresaId)
+                        $(this).append(ui.draggable);
+                    }
+                },
+                
+            );
+            $('#empresas').droppable({
+                accept: '.logos',
+                hoverClass: 'hovering',
+                drop: function (ev, ui) {
+                    ui.draggable.detach();
+                    $(this).append(ui.draggable);
+
+                }
+            });
+        }
+    });
+
+
+    /*localStorage y botones*/
+    function hasDuplicates(arr) {
+	return new Set(arr).size !== arr.length;
+    }
+
+    $('#botonMostrar').click(function () {
+        $('.mostrar').remove()
+        let imagenes = $('#stock').children('img')
+        for (i = 0; i < imagenes.length; i++) {
+            var image = new Image();
+            src = $('#stock>img:eq(' + i + ')').attr("src");
+            image.src = src;
+            $('#stock2').append(image);
+            image.setAttribute("class", "mostrar");
+        }
+        let images = document.querySelectorAll('#stock img');
+        let imagesId = [];
+        for (let i = 0; i < images.length; i++) {
+            imagesId.push(images[i].id);
+        }
+        if (hasDuplicates(imagesId)) {
+            localStorage.clear('Seleccionadas');
+            $("#stock").empty();
+            localStorage.setItem('Seleccionadas');
+            return
+        }
+        else {
+            localStorage.setItem('Seleccionadas', JSON.stringify(imagesId));
+            valores();
+            $("#empresas").css("display", "none");
+            $("#botonMostrar").css("display", "none");
+            $("#stock").css("display", "none");
+            location.reload;
+            return;
+        }
+    });
+
+    function valores() {
+        var empresas = JSON.parse(localStorage.getItem("Seleccionadas"));
+        console.log(empresas)
+        Object.entries(empresas).forEach(([key, valor]) => {
+            console.log(valor)
+            cotizacion(valor);
+        });
+        clearInterval(timer);
+        timer = setInterval(time, 10000);
+    }
+
+    function time(){
+        var empresas = JSON.parse(window.localStorage.getItem("Seleccionadas"));
+        Object.entries(empresas).forEach(([key, valor]) => {
+            actualizarCotizacion(valor);
+        });
+      }
+
+    async function cotizacion(empresa) {
+        await fetch('http://10.10.17.119/api/ultima/' + empresa)
+            .then(response => response.json())
+            .then(response => {
+                ultima = response;
+                $('#importes').append(`<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mx-auto px-3 py-3"><div class="card cartas"><img src="images/${empresa}.png" class="card-img-top h-25 w-75 mx-auto" alt="Logo de ${empresa}"><div class="card-body"><h2 id=${empresa}Valor class="card-title"></h2><button class="btn btn-warning font-weight-bold" onclick="openPopup('${empresa}')">Abrir Grafico</button></div></div></div>`);
+                actualizarCotizacion(empresa)
+            })
+            .catch(error => console.log(error));
+    }
+
+    async function actualizarCotizacion(empresa) {
+        await fetch('http://10.10.17.119/api/ultima/' + empresa)
+            .then(response => response.json())
+            .then(response => {
+                ultima = response;
+                document.getElementById(empresa+'Valor').innerHTML = ultima.valor;
+            })
+            .catch(error => console.log(error));
+    }
+
+    function openPopup(empresa){
+    const options = {
+        method: 'GET',
+      }; 
+    fetch(`http://10.10.17.119/api/datos/${empresa}`, options)
+      .then(response => response.json())
+      .then(response => grafico(response))
+      .catch(err => console.error(err));
+    }
+
+    function grafico(data) {
+            const fecha = data.map(item => item.fecha);
+            const value = data.map(item => item.valor);
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: fecha,
+                datasets: [{
+                    label: 'Valores de Cotizacion',
+                    data: value,
+                    borderColor: 'rgb(255, 0, 0)',
+                    pointStyle: 'circle',
+                    pointRadius: 10,
+                    pointHoverRadius: 15
+                    }
+                ]
+            },
+            
+            options: {
+                responsive: true,
+                plugins: {
+                title: {
+                    display: true,
+                    text: (ctx) => 'Point Style: ' + ctx.chart.data.datasets[0].pointStyle,
+                }
+                }
+            }
+        });
+        $('#graficos').css('display','block');
+    }   
+
+    $("#setup").click(function () {
+        if ($("#dropContent").find(".dragableBox").length == 0) {
+            var box = $(".dragableBox");
+            $(".dragableBox").remove();
+            $("#dropContent").append(box);
+            $("#empresas").css("display", "block");
+            $("#botonMostrar").css("display", "block");
+            $("#importes").empty()
+            $("#stock").css("display", "block");
+            $("#myChart").css("display", "none");
+        }
+        location.reload;
+        localStorage.removeItem('Seleccionadas');
+    });
+
+
+
+</script>
+</html>
